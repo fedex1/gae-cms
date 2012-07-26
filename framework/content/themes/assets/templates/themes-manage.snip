@@ -1,0 +1,60 @@
+{% load filters %}
+
+{{ content.section|css:"themes-manage.css" }}
+
+<ul class="themes manage">{% for theme in themes %}
+	<li>
+		<h3>{{ theme.namespace }}</h3>
+		<a href="/{{ content.section.path }}/{{ content.namespace }}/edit/{{ theme.namespace }}" class="edit" title="Edit template">[Edit</a>
+		<a href="/{{ content.section.path }}/{{ content.namespace }}/delete/{{ theme.namespace }}" class="delete" title="Delete">, Delete]</a>
+		<ul><li><h4>Body templates</h4>
+			<ul>
+				{% for f in theme.body_template_names %}
+					<li>
+						{{ f }}
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/edit_body_template/{{ theme.namespace }}/{{ f }}" class="edit" title="Edit body template">[Edit</a>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/delete_body_template/{{ theme.namespace }}/{{ f }}" class="delete" title="Delete body template">, Delete]</a>
+					</li>
+				{% endfor %}
+				<li><a href="/{{ content.section.path }}/{{ content.namespace }}/edit_body_template/{{ theme.namespace }}">Add</a></li>
+			</ul>
+		</li></ul>
+		<ul><li><h4>CSS</h4>
+			<ul>
+				{% for f in theme.css_filenames %}
+					<li>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/get/{{ theme.namespace }}/css/{{ f }}">{{ f }}</a>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/edit_css/{{ theme.namespace }}/{{ f }}" class="edit" title="Edit CSS">[Edit</a>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/delete_css/{{ theme.namespace }}/{{ f }}" class="delete" title="Delete CSS">, Delete]</a>
+					</li>
+				{% endfor %}
+				<li><a href="/{{ content.section.path }}/{{ content.namespace }}/edit_css/{{ theme.namespace }}">Add</a></li>
+			</ul>
+		</li></ul>
+		<ul><li><h4>Javascript</h4>
+			<ul>
+				{% for f in theme.js_filenames %}
+					<li>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/get/{{ theme.namespace }}/js/{{ f }}">{{ f }}</a>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/edit_js/{{ theme.namespace }}/{{ f }}" class="edit" title="Edit JS">[Edit</a>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/delete_js/{{ theme.namespace }}/{{ f }}" class="delete" title="Delete JS">, Delete]</a>
+					</li>
+				{% endfor %}
+				<li><a href="/{{ content.section.path }}/{{ content.namespace }}/edit_js/{{ theme.namespace }}">Add</a></li>
+			</ul>
+		</li></ul>
+		<ul><li><h4>Images</h4>
+			<ul>
+				{% for f in theme.image_filenames %}
+					<li>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/get/{{ theme.namespace }}/image/{{ f }}">{{ f }}</a>
+						<a href="/{{ content.section.path }}/{{ content.namespace }}/delete_image/{{ theme.namespace }}/{{ f }}" class="delete" title="Delete JS">, Delete]</a>
+					</li>
+				{% endfor %}
+				<li><a href="/{{ content.section.path }}/{{ content.namespace }}/add_image/{{ theme.namespace }}">Add</a></li>
+			</ul>
+		</li></ul>
+	</li>
+{% empty %}
+	<li>There are no custom themes yet.  <a href="/{{ content.section.path }}/{{ content.namespace }}/browse">Browse the market</a> for starter themes or <a href="/{{ content.section.path }}/{{ content.namespace }}/add">create your own theme</a> from scratch.</li>
+{% endfor %}</ul>

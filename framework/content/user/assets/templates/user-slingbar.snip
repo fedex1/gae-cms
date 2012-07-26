@@ -1,0 +1,32 @@
+{% load filters %}
+
+{{ content.section|css:"slingbar.css" }}
+{{ content.section|yuijs:"yui/yui.js" }}
+{{ content.section|js:"slingbar.js" }}
+
+{% captureas unique %}{{ content.unique_identifier }}-user-slingbar{% endcaptureas %}
+
+<div id="{{ unique }}" class="slingbar yui3-menu yui3-menu-horizontal yui3-splitbuttonnav">
+    <div class="yui3-menu-content">
+        <ul>
+            <li>
+                <span class="yui3-menu-label">
+                    <a href="#user-options-{{ unique }}">{{ user.email }}</a>
+                    <a href="#user-options-{{ unique }}" class="yui3-menu-toggle">User Options</a>
+                </span>
+                <div id="user-options-{{ unique }}" class="yui3-menu">
+                    <div class="yui3-menu-content">
+                        <ul>
+                        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="{{ content.section.logout_url }}">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            {% if is_admin %}
+            	<li>{{ content.section|view:"GLOBAL, navigation, Navigation, menu"|safe }}</li>
+            	<li>{{ content.section|view:"GLOBAL, configuration, Configuration, menu"|safe }}</li>
+            	<li>{{ content.section|view:"GLOBAL, themes, Themes, menu"|safe }}</li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

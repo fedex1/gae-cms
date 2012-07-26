@@ -1,0 +1,22 @@
+.navigation.breadcrumb li {
+	display: inline;
+	padding: 0.2em;
+	margin: 0.2em;
+}
+.navigation.breadcrumb {
+	float: left;
+}
+.navigation.breadcrumb ul {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.navigation.breadcrumb li.current {
+	font-weight: bold;
+	background-color: #EBEFF9;
+	border-bottom: none;
+}
+.navigation.breadcrumb li.current a {
+	color: black;
+	text-decoration: none;
+}

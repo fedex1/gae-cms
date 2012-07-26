@@ -1,0 +1,5 @@
+{% load filters %}
+
+{% if user %}
+	{{ section|view:"GLOBAL, slingbar, User, slingbar"|safe }}
+{% endif %}

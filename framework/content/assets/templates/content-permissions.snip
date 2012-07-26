@@ -1,0 +1,38 @@
+{% load filters %}
+
+{{ content.section|css:"content-permissions.css" }}
+{{ content.section|yuijs:"yui/yui.js" }}
+{{ content.section|js:"content-permissions.js" }}
+
+{% captureas unique %}{{ content.unique_identifier }}-content-permissions{% endcaptureas %}
+
+<div id="{{ unique }}" class="content-permissions yui3-menu yui3-menu-horizontal yui3-splitbuttonnav">
+    <div class="yui3-menu-content">
+        <ul>
+            <li>
+                <span class="yui3-menu-label">
+                    <a href="#content-options-{{ unique }}">{{ content.name }} ({{ view }})</a>
+                    <a href="#content-options-{{ unique }}" class="yui3-menu-toggle">Content Options</a>
+                </span>
+                <div id="content-options-{{ unique }}" class="yui3-menu">
+                    <div class="yui3-menu-content">
+                        <ul>
+                        	{% for action in allowed_actions %}<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{% if content.section_path %}{{ content.section_path }}{% else %}{{ content.section.path }}{% endif %}/{{ content.namespace }}/{{ action.0 }}">{{ action.1 }}</a></li>{% endfor %}
+							{% if can_manage and container_namespace %}<li>
+							    <a class="yui3-menu-label" href="#manage-{{ unique }}">Manage</a>
+							    <div id="manage-{{ unique }}" class="yui3-menu">
+							        <div class="yui3-menu-content">
+							            <ul>
+							                {% if total_ranks > 1 %}<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ container_namespace }}/reorder/{{ rank }}">Reorder</a>{% endif %}
+							                <li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ container_namespace }}/delete/{{ rank }}">Delete</a>
+							            </ul>
+							        </div>
+							    </div>
+							</li>{% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

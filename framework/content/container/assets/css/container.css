@@ -1,0 +1,14 @@
+a.container.add {
+	display: block;
+	margin: 0.3em 0;
+	padding: 0.3em;
+	border: 1px solid #38B214;
+	background-color: #DAFFD3;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+}
+a.container.add:hover {
+	background-color: #B0EFA0;
+}

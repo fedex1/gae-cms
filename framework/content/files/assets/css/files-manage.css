@@ -1,0 +1,21 @@
+.files.manage {
+	list-style: none;
+}
+.files.manage ul {
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+.files.manage li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.files.manage a.delete {
+	background: url(/framework/assets/images/sprite.png) 0 -62px no-repeat;
+	width: 16px;
+	display: block;
+	text-indent: -9999px;
+	float: left;
+	padding: 1px;
+	margin-right: 0.5em;
+}

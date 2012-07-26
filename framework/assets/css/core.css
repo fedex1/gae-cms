@@ -1,0 +1,29 @@
+.status {
+	margin: 1em 0;
+	padding: 1em;
+	text-align: center;
+	font-weight: bold;
+}
+.error {
+	color: #B51800;
+	border: 2px solid #B51800;
+	background-color: #FFA496;
+}
+.progress {
+	color: #216600;
+	border: 2px solid #216600;
+	background-color: #D6FFC1;
+}
+.warning {
+	color: #A86400;
+	border: 2px solid #A86400;
+	background-color: #FFEB9E;
+}
+.traceback {
+	text-align: left;
+	color: black;
+	background-color: #FFFADB;
+	padding: 1em;
+	margin: 1em 0;
+	border: 1px solid black;
+}

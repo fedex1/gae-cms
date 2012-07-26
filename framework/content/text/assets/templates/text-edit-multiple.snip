@@ -1,0 +1,40 @@
+{% load filters %}
+
+{{ content.section|css:"text-edit-multiple.css" }}
+{{ content.section|yuijs:"yui/yui.js" }}
+{{ content.section|js:"text-edit-multiple.js" }}
+
+<a class="text-edit-multiple-add" href="/{{ content.section.path }}/{{ content.namespace }}/add/0">Add text item</a>
+
+{% for item in content.items %}
+
+	{% captureas unique %}{{ content.unique_identifier }}-text-edit-multiple-{{ forloop.counter0 }}{% endcaptureas %}
+	
+	<div id="{{ unique }}" class="text-edit-multiple yui3-menu yui3-menu-horizontal yui3-splitbuttonnav">
+	    <div class="yui3-menu-content">
+	        <ul>
+	            <li>
+	                <span class="yui3-menu-label">
+	                    <a href="#content-options-{{ unique }}">Item {{ forloop.counter }}</a>
+	                    <a href="#content-options-{{ unique }}" class="yui3-menu-toggle">Item Options</a>
+	                </span>
+	                <div id="content-options-{{ unique }}" class="yui3-menu">
+	                    <div class="yui3-menu-content">
+	                        <ul>
+	                        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/edit/{{ forloop.counter0 }}">Edit</a></li>
+	                        	{% if content.items|length > 1 %}<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/reorder/{{ forloop.counter0 }}">Reorder</a></li>{% endif %}
+	                        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/delete/{{ forloop.counter0 }}">Delete</a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </li>
+	        </ul>
+	    </div>
+	</div>
+
+	{% if item.0 %}<h3>{{ item.0 }}</h3>{% endif %}
+	{{ item.1 }}
+
+	<a class="text-edit-multiple-add" href="/{{ content.section.path }}/{{ content.namespace }}/add/{{ forloop.counter }}">Add text item</a>
+
+{% endfor %}

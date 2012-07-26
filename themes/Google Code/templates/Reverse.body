@@ -1,0 +1,30 @@
+{{ section|yuicss:"cssfonts/cssfonts.css,cssreset/cssreset.css,cssbase/cssbase.css" }}
+{{ section|themecss:"base.css" }}
+
+{% if section.mobile_ua %}
+	{{ section|themecss:"mobile.css" }}
+	{{ section|viewport_content:"width=240, initial-scale=1.0" }}
+{% else %}
+	{{ section|themecss:"layout-reverse.css" }}
+	{{ section|yuicss:"cssgrids/cssgrids.css" }}
+{% endif %}
+
+<div class="user-bar">{% if user %}<a href="{{ section.logout_url }}">Sign out</a>{% else %}<a href="{{ section.login_url }}">Sign in</a>{% endif %}</div>
+<div class="hd">
+	<h1 class="site-header main"><a href="/">{{ section.configuration.SITE_HEADER }}</a></h1>
+	<h2 class="site-header sub"><a href="/">{{ section.configuration.SITE_SUB_HEADER }}</a></h2>
+</div>
+{{ section|view:"GLOBAL, themes, Themes, themes_previewer"|safe }}
+{{ section|view:"GLOBAL, navigation, Navigation, nth_level_only, 0, horizontal"|safe }}
+<div class="bd yui3-g">
+	<div class="mn yui3-u-5-6">
+		{{ main|safe }}
+	</div>
+	<div class="sd1 yui3-u-1-6">
+		{{ section|view:"GLOBAL, navigation, Navigation, expanding_hierarchy, 1, vertical"|safe }}
+		{{ section|view:"LOCAL, side1, Container, default"|safe }}
+	</div>
+</div>
+<div class="ft">
+	{{ section|view:"GLOBAL, footer, Text, default"|safe }}
+</div>

@@ -1,0 +1,19 @@
+.nav-dropdown-h {
+	clear: both;
+	margin: 0.5em 0;
+	height: 2em;
+	visibility: hidden; /* Prevent flicker on load, javascript will make visible when ready */
+}
+.nav-dropdown-h .yui3-menu {
+	visibility: hidden; /* Prevent flicker on load, javascript will make visible when ready */
+}
+.yui3-skin-sam .nav-dropdown-h.yui3-splitbuttonnav .yui3-menuitem-content {
+	cursor: pointer;
+}
+.yui3-skin-sam .nav-dropdown-h.yui3-splitbuttonnav .yui3-menuitem-content, .yui3-skin-sam .nav-dropdown-h.yui3-splitbuttonnav .yui3-menu-label a {
+	cursor: pointer;
+}
+.yui3-skin-sam .nav-dropdown-h.yui3-splitbuttonnav li.current,
+.yui3-skin-sam .nav-dropdown-h.yui3-splitbuttonnav li.ancestor {
+	background-color: #D8D8D8;
+}

@@ -1,0 +1,31 @@
+{% if content.items|length == 1 %}
+
+	<div class="content text single default">
+		{% if content.items.0.0 %}<h2>{{ content.items.0.0|safe }}</h2>{% endif %}
+		{{ content.items.0.1|safe }}
+	</div>
+
+{% else %}
+
+	{% load filters %}
+
+	{{ content.section|css:"text-default.css" }}
+	{{ content.section|yuijs:"yui/yui.js" }}
+	{{ content.section|js:"text-default.js" }}
+
+	{% captureas unique %}{{ content.unique_identifier }}-text-tabs{% endcaptureas %}
+
+	<div id="{{ unique }}" class="content text tabs default">
+	    <ul>
+	        {% for item in content.items %}
+	        	<li><a href="#{{ unique }}-i{{ forloop.counter }}">{% if item.0 %}{{ item.0|safe }}{% else %}-{% endif %}</a></li>
+	        {% endfor %}
+	    </ul>
+	    <div>
+	        {% for item in content.items %}
+	        	<div id="{{ unique }}-i{{ forloop.counter }}">{{ item.1|safe }}</div>
+	        {% endfor %}
+	    </div>
+	</div>
+
+{% endif %}

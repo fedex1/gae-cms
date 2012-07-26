@@ -1,0 +1,14 @@
+.yui-editor-container {
+	margin: 0.5em 0;
+}
+.editor-hidden {
+    visibility: hidden;
+    top: -9999px;
+    left: -9999px;
+    position: absolute;
+}
+.rich-text-editor {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}

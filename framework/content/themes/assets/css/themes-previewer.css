@@ -1,0 +1,9 @@
+.themes-previewer {
+	float: right;
+	margin: 0.5em;
+}
+.themes-previewer select, .themes-previewer input {
+	float: left;
+	margin: 0;
+	padding: 0.4em;
+}

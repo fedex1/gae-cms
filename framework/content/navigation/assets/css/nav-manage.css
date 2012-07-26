@@ -1,0 +1,37 @@
+.navigation.manage {
+	list-style: none;
+}
+.navigation.manage ul {
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+}
+.navigation.manage li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.navigation.manage a.edit, .navigation.manage a.subsection, .navigation.manage a.reorder, .navigation.manage span.reorder-disabled, .navigation.manage a.delete, .navigation.manage span.delete-disabled {
+	background: url(/framework/assets/images/sprite.png) 0 -511px no-repeat;
+	width: 14px;
+	display: block;
+	text-indent: -9999px;
+	float: left;
+	padding: 1px;
+	margin-right: 0.5em;
+}
+.navigation.manage a.subsection {
+	background-position: 0 -487px;
+}
+.navigation.manage a.reorder, .navigation.manage span.reorder-disabled {
+	background-position: 0 -672px;
+}
+.navigation.manage span.reorder-disabled {
+	background-color: #CCC;
+}
+.navigation.manage a.delete, .navigation.manage span.delete-disabled {
+	background-position: 0 -62px;
+	width: 16px;
+}
+.navigation.manage span.delete-disabled {
+	background-color: #CCC;
+}

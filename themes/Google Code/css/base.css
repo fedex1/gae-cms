@@ -1,0 +1,67 @@
+/* Base styles */
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0.2em;
+	background-color: #EBEFF9;
+	border-top: 1px solid #6B90DA;
+}
+a {
+	color: #0000CC;
+}
+blockquote {
+	background-color: #E5ECF9;
+	padding: 0.5em;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* Header elements */
+
+.user-bar {
+	text-align: right;
+	border-bottom: 1px solid #C9D7F1;
+	padding: 0.3em 0.5em;
+}
+.site-header {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+.site-header a {
+	color: #666;
+	text-decoration: none;
+	font-size: 215%;
+	font-weight: normal;
+	padding-left: 57px;
+	outline: none;
+}
+.site-header.sub a {
+	font-size: 80%;
+	color: #444;
+	margin: 0;
+}
+
+/* Header/body/footer */
+
+.hd {
+	background: url(/framework/assets/images/sprite.png) 0 -742px no-repeat;
+	margin: 0.5em 0.95em 0.7em 0.95em;
+	float: left;
+}
+.bd {
+	clear: both;
+	margin: 10px;
+}
+.ft {
+	text-align: center;
+	margin: 10px;
+}
+
+/* Specific content */
+
+.themes-previewer {
+	margin-top: 2em;
+}

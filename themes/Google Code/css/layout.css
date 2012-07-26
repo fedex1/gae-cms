@@ -1,0 +1,13 @@
+/* Adapted from: http://yuiblog.com/sandbox/yui/3.2.0pr1/examples/cssgrids/cssgrids-fluid.html */
+
+.bd {
+    padding-left: 250px; /* "left col" width */ 
+}
+.sd1 {
+    margin-left: -250px; /* "left col" width */
+    width: 240px;
+    margin-right: 10px;
+}
+.mn {
+	width: 100%;
+}

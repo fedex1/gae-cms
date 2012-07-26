@@ -1,0 +1,22 @@
+{% load filters %}
+
+{% captureas unique %}{{ content.unique_identifier }}-navigation-manage{% endcaptureas %}
+
+<span class="yui3-menu-label">
+    <a href="#section-options-{{ unique }}">Section</a>
+    <a href="#section-options-{{ unique }}" class="yui3-menu-toggle">Section Options</a>
+</span>
+<div id="section-options-{{ unique }}" class="yui3-menu">
+    <div class="yui3-menu-content">
+        <ul>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/edit">Edit</a></li>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/create">Create</a></li>{% if content.section.has_siblings %}
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/reorder">Reorder</a></li>{% endif %}{% if not content.section.is_default and not content.section.has_children %}
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/delete">Delete</a></li>{% endif %}
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/manage">Manage</a></li>
+            {% if is_admin %}
+            	<li>{{ content.section|view:"LOCAL, files, Files, menu"|safe }}</li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

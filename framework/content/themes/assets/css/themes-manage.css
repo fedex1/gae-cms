@@ -1,0 +1,31 @@
+.themes.manage {
+	list-style: none;
+}
+.themes.manage ul {
+	margin-top: 0;
+	margin-bottom: 0;
+	list-style: none;
+	border: 1px solid #6B90DA;
+	margin: 2em;
+	padding: 0.5em;
+}
+.themes.manage li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.themes.manage h3 {
+	margin-bottom: 0.4em;
+}
+.themes.manage a.edit, .themes.manage a.delete {
+	background: url(/framework/assets/images/sprite.png) 0 -511px no-repeat;
+	width: 14px;
+	display: block;
+	text-indent: -9999px;
+	float: left;
+	padding: 1px;
+	margin-right: 0.5em;
+}
+.themes.manage a.delete {
+	background-position: 0 -62px;
+	width: 16px;
+}

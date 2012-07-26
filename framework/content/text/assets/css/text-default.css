@@ -1,0 +1,3 @@
+.text.default.tabs {
+	visibility: hidden; /* Prevent flicker on load, javascript will make visible when ready */
+}

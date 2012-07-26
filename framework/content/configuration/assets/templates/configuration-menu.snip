@@ -1,0 +1,15 @@
+{% load filters %}
+
+{% captureas unique %}{{ content.unique_identifier }}-configuration-manage{% endcaptureas %}
+
+<span class="yui3-menu-label">
+    <a href="#configuration-options-{{ unique }}">Configuration</a>
+    <a href="#configuration-options-{{ unique }}" class="yui3-menu-toggle">Configuration Options</a>
+</span>
+<div id="configuration-options-{{ unique }}" class="yui3-menu">
+    <div class="yui3-menu-content">
+        <ul>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/edit">Edit</a></li>
+        </ul>
+    </div>
+</div>

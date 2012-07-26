@@ -1,0 +1,17 @@
+<h2>Manage files</h2>
+
+{% if content.filenames %}
+
+	{% load filters %}
+	{{ content.section|css:"files-manage.css" }}
+
+	<ul class="files manage">{% for item in content.filenames %}
+		<li>
+			<a href="/{{ content.section.path }}/files/get/{{ item }}">{{ item }}</a>
+			<a href="/{{ content.section.path }}/files/delete/{{ item }}" class="delete" title="Delete">[Delete]</a>
+		</li>
+	{% endfor %}</ul>
+
+{% endif %}
+
+<a href="/{{ content.section.path }}/files/add">Add</a>

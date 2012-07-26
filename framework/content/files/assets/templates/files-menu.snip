@@ -1,0 +1,13 @@
+{% load filters %}
+
+{% captureas unique %}{{ content.unique_identifier }}-files-menu{% endcaptureas %}
+
+<a href="#files-options-{{ unique }}" class="yui3-menu-label">Files</a>
+<div id="files-options-{{ unique }}" class="yui3-menu">
+    <div class="yui3-menu-content">
+        <ul>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/add">Add</a></li>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/manage">Manage</a></li>
+        </ul>
+    </div>
+</div>

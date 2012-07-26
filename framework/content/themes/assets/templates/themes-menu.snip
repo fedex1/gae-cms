@@ -1,0 +1,18 @@
+{% load filters %}
+
+{% captureas unique %}{{ content.unique_identifier }}-themes-menu{% endcaptureas %}
+
+<span class="yui3-menu-label">
+    <a href="#themes-options-{{ unique }}">Themes</a>
+    <a href="#themes-options-{{ unique }}" class="yui3-menu-toggle">Themes Options</a>
+</span>
+<div id="themes-options-{{ unique }}" class="yui3-menu">
+    <div class="yui3-menu-content">
+        <ul>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/browse">Browse starter themes</a></li>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/add">Add</a></li>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/upload">Upload</a></li>
+        	<li class="yui3-menuitem"><a class="yui3-menuitem-content" href="/{{ content.section.path }}/{{ content.namespace }}/manage">Manage</a></li>
+        </ul>
+    </div>
+</div>
